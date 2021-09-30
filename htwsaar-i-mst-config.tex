@@ -1,0 +1,248 @@
+% ****************************************************************************************************
+% htwsaar-i-mst-config.tex 
+% ****************************************************************************************************  
+\RequirePackage[utf8]{inputenc}				
+ \DeclareUnicodeCharacter{00A0}{~}								
+\RequirePackage[T1]{fontenc} 
+								
+% ****************************************************************************************************
+% 1. Personal data and user ad-hoc commands
+% ****************************************************************************************************
+\newcommand{\myTitle}{Eine \LaTeX-Vorlage für Abschlussarbeiten im Bereich Informatik/ Mechatronik-Sensortechnik an der htw saar}
+\newcommand{\myDegree}{Bachelor of Science (B.\,Sc.)\xspace}
+%\newcommand{\myDegree}{Master of Science (M.\,Sc.)\xspace}
+\newcommand{\myDegreeType}{Bachelor\xspace}
+%\newcommand{\myDegreeType}{Master\xspace}
+\newcommand{\myDegreeCourse}{Praktische Informatik}
+%\newcommand{\myDegreeCourse}{Kommunikationsinformatik}
+\newcommand{\myName}{Max Muster\xspace}
+\newcommand{\myUni}{Hochschule für Technik und Wirtschaft des Saarlandes\xspace}
+\newcommand{\myCompany}{SoftwareCenter Musterhausen\xspace}
+\newcommand{\myFirstProf}{Prof. Dr.-Ing. Andr\'e Miede\xspace}
+\newcommand{\mySecondProf}{Prof. Dr. Thomas Kretschmer\xspace}
+\newcommand{\myLocation}{Saarbrücken\xspace}
+\newcommand{\myTime}{Tag.~Monat~Jahr\xspace}
+\newcommand{\currentVersion}{Version 2.2, September 2021\xspace} % TODO: ggf. über git Versionsinformationen automatisch bereitstellen und verwenden
+
+% ********************************************************************
+% Setup, finetuning, and useful commands
+% ********************************************************************
+\newcounter{dummy} % necessary for correct hyperlinks (to index, bib, etc.)
+% ****************************************************************************************************
+
+
+% ****************************************************************************************************
+% 2. Loading some handy packages
+% ****************************************************************************************************
+% ******************************************************************** 
+% Packages with options that might require adjustments
+% ******************************************************************** 
+\PassOptionsToPackage{ngerman}{babel}   % change this to your language(s)
+ \RequirePackage{babel}					
+ \RequirePackage{csquotes}
+	
+\PassOptionsToPackage{language=auto,style=numeric-comp,backend=bibtex8,bibencoding=ascii,maxbibnames=50}{biblatex}
+ \RequirePackage{biblatex}	
+ \bibliography{Bibliography}			
+
+\PassOptionsToPackage{fleqn}{amsmath}		% math environments and more by the AMS 
+ \RequirePackage{amsmath}
+
+% ******************************************************************** 
+% Setting up the page and margins
+% ******************************************************************** 
+\usepackage{geometry}
+ \geometry{a4paper,left=25mm,right=35mm,top=25mm,bottom=30mm}
+% DIESE WERTE SIND NICHT ZU VERÄNDERN -- DO NOT CHANGE THESE VALUES
+
+% ******************************************************************** 
+% General useful packages
+% ******************************************************************** 
+%\usepackage[automark]{scrpage2}
+\PassOptionsToPackage{dvipsnames}{xcolor}
+	\RequirePackage{xcolor} % [dvipsnames]  
+	\definecolor{ingwi}{cmyk}{.9,0,0,0}
+\usepackage{textcomp} % fix warning with missing font shapes
+\usepackage{scrhack} % fix warnings when using KOMA with listings package          
+\usepackage{xspace} % to get the spacing after macros right  
+\usepackage{mparhack} % get marginpar right
+%\usepackage{fixltx2e} % fixes some LaTeX stuff <-- ist seit 2015 nicht mehr notwendig
+\PassOptionsToPackage{printonlyused}{acronym}
+	\usepackage{acronym} % nice macros for handling all acronyms in the thesis
+%\renewcommand{\bflabel}[1]{{#1}\hfill} % fix the list of acronyms
+\usepackage{booktabs}
+\usepackage{multirow}
+\usepackage[shadow]{todonotes} %Settings for ToDoNotes
+% Eigene Shortcuts fuer laengere Befehle
+	\newcommand{\todox}[1]{\todo[inline, size=\small]{#1}}
+	%Nummerierte Anmerkungen
+	\newcounter{todocounter}
+	\renewcommand{\todox}[2][]{\stepcounter{todocounter}\todo[inline, size=\small,caption={\thetodocounter: #2}, #1]{\renewcommand{\baselinestretch}{0.5}\selectfont\thetodocounter: #2\par}}
+\usepackage{blindtext}
+%\usepackage{footmisc}
+% ****************************************************************************************************
+
+
+% ****************************************************************************************************
+% 3. Setup floats: tables, (sub)figures, and captions
+% ****************************************************************************************************
+\usepackage{tabularx} % better tables
+	\setlength{\extrarowheight}{3pt} % increase table row height
+%\newcommand{\myfloatalign}{\centering} % to be used with each float for alignment
+\usepackage{caption}
+\captionsetup{format=hang,font=small}
+\usepackage{subfig}
+\usepackage{wrapfig}
+% ****************************************************************************************************
+
+
+% ****************************************************************************************************
+% 6. Setup code listings
+% ****************************************************************************************************
+\usepackage{listings} 
+%\lstset{emph={trueIndex,root},emphstyle=\color{BlueViolet}}%\underbar} % for special keywords
+\lstset{language=[LaTeX]Tex,%C++,
+    keywordstyle=\color{RoyalBlue},%\bfseries,
+    basicstyle=\small\ttfamily,
+    %identifierstyle=\color{NavyBlue},
+    commentstyle=\color{Green}\ttfamily,
+    stringstyle=\rmfamily,
+    numbers=none,%left,%
+    numberstyle=\scriptsize,%\tiny
+    stepnumber=5,
+    numbersep=8pt,
+    showstringspaces=false,
+    breaklines=true,
+    frameround=ftff,
+    frame=single,
+		texcl=true,
+    belowcaptionskip=.75\baselineskip
+    %frame=L
+} 
+%Styles für verschiedene Sprachen festlegen, z.B. Java
+\lstdefinestyle{Java}{
+belowcaptionskip=1\baselineskip,
+  breaklines=true,
+  xleftmargin=\parindent,
+  language=Java,
+	texcl=true,
+  showstringspaces=false,
+  basicstyle=\footnotesize\ttfamily,
+  keywordstyle=\bfseries\color{green!40!black},
+  commentstyle=\itshape\color{purple!40!black},
+  identifierstyle=\color{blue},
+  stringstyle=\color{orange}}
+% ****************************************************************************************************    		   
+
+
+% ****************************************************************************************************
+% 6. PDFLaTeX, hyperreferences and citation backreferences
+% ****************************************************************************************************
+% ********************************************************************
+% Using PDFLaTeX
+% ********************************************************************
+\PassOptionsToPackage{pdftex,hyperfootnotes=false,pdfpagelabels}{hyperref}
+	\usepackage{hyperref}  % backref linktocpage pagebackref
+\pdfcompresslevel=9
+\pdfadjustspacing=1 
+\PassOptionsToPackage{pdftex}{graphicx}
+	\usepackage{graphicx} 
+    
+
+% ********************************************************************
+% Hyperreferences
+% ********************************************************************
+\hypersetup{%
+    %draft,	% = no hyperlinking at all (useful in b/w printouts)
+    pdfstartpage=1, pdfstartview=Fit,%
+		colorlinks=true, linktocpage=true,
+		%urlcolor=Black, linkcolor=Black, citecolor=Black, %pagecolor=Black,%
+		%urlcolor=brown, linkcolor=RoyalBlue, citecolor=green, %pagecolor=RoyalBlue,%
+    % uncomment the following line if you want to have black links (e.g., for printing)
+    colorlinks=false, pdfborder={0 0 0},
+    breaklinks=true, pdfpagemode=UseNone, pageanchor=true, pdfpagemode=UseOutlines,%
+    plainpages=false, bookmarksnumbered, bookmarksopen=true, bookmarksopenlevel=1,%
+    hypertexnames=true, pdfhighlight=/O,%nesting=true,%frenchlinks,%
+    pdftitle={\myTitle},%
+    pdfauthor={\textcopyright\ \myName, \myUni},%
+    pdfsubject={},%
+    pdfkeywords={},%
+    pdfcreator={pdfLaTeX},%
+    pdfproducer={LaTeX with hyperref}%
+}   
+
+% ********************************************************************
+% Setup autoreferences
+% ********************************************************************
+% There are some issues regarding autorefnames
+% http://www.ureader.de/msg/136221647.aspx
+% http://www.tex.ac.uk/cgi-bin/texfaq2html?label=latexwords
+% you have to redefine the makros for the 
+% language you use, e.g., american, ngerman
+% (as chosen when loading babel/AtBeginDocument)
+% ********************************************************************
+\makeatletter
+\@ifpackageloaded{babel}%
+    {%
+       \addto\extrasamerican{%
+					\renewcommand*{\figureautorefname}{Figure}%
+					\renewcommand*{\tableautorefname}{Table}%
+					\renewcommand*{\partautorefname}{Part}%
+					\renewcommand*{\chapterautorefname}{Chapter}%
+					\renewcommand*{\sectionautorefname}{Section}%
+					\renewcommand*{\subsectionautorefname}{Section}%
+					\renewcommand*{\subsubsectionautorefname}{Section}% 	
+				}%
+       \addto\extrasngerman{% 
+					\renewcommand*{\chapterautorefname}{Kapitel}%
+					\renewcommand*{\sectionautorefname}{Abschnitt}%
+					\renewcommand*{\subsectionautorefname}{Abschnitt}%
+					\renewcommand*{\subsubsectionautorefname}{Abschnitt}% 
+					\renewcommand*{\paragraphautorefname}{Absatz}%
+					\renewcommand*{\subparagraphautorefname}{Absatz}%
+					\renewcommand*{\footnoteautorefname}{Fu\"snote}%
+					\renewcommand*{\FancyVerbLineautorefname}{Zeile}%
+					\renewcommand*{\theoremautorefname}{Theorem}%
+					\renewcommand*{\appendixautorefname}{Anhang}%
+					\renewcommand*{\equationautorefname}{Gleichung}%        
+					\renewcommand*{\itemautorefname}{Punkt}%
+				}%	
+			% Fix to getting autorefs for subfigures right (thanks to Belinda Vogt for changing the definition)
+			\providecommand{\subfigureautorefname}{\figureautorefname}%  			
+    }{\relax}
+\makeatother
+
+
+% ****************************************************************************************************
+% 6. Last calls before the bar closes
+% ****************************************************************************************************
+% ********************************************************************
+% Development Stuff
+% ********************************************************************
+%\listfiles
+\PassOptionsToPackage{l2tabu,orthodox,abort}{nag}
+	\usepackage{nag}
+%\PassOptionsToPackage{warning, all}{onlyamsmath}
+%	\usepackage{onlyamsmath}
+
+
+% ****************************************************************************************************
+% 7. Further adjustments (experimental)
+% ****************************************************************************************************
+%\usepackage{tocbibind} %Allows us to add Bibliography to ToC
+\usepackage{enumitem}
+\setdescription{font=\normalfont\bfseries} %Changes the appearance of description items
+\usepackage[activate={true,nocompatibility},final,tracking=true,kerning=true,spacing=true,factor=1100,stretch=10,shrink=10]{microtype}
+
+
+% ********************************************************************
+% Using different fonts
+% ********************************************************************
+%\usepackage{lmodern} % <-- no osf support :-(
+%\usepackage[tt=false]{libertine} % [osf]
+%\usepackage{luximono} 
+\usepackage{mathpazo} 
+%\usepackage[urw-garamond]{mathdesign} <-- no osf support :-(
+
+\setkomafont{disposition}{\bfseries}
+% ****************************************************************************************************

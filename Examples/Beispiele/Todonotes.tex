@@ -1,0 +1,51 @@
+%############################################################
+\clearpage\section{To-Do-Notes}
+Um bei einer längeren Arbeit nicht den Überblick zu verlieren, an welcher Stelle es nötig ist
+weiter zu arbeiten, bietet es sich an, kleine Notizen einzufügen. Das Package \textit{todonotes}
+stellt eine elegante Lösung bereit, um differenziert und vielfarbig jene Abschnitte zu kennzeichnen,
+die einer weiteren Bearbeitung bedürfen.
+
+\subsection*{Beispiel für To-Do-Notes}
+Dies hier ist ein Blindtext zum Testen von Textausgaben. Wer diesen Text liest, ist selbst
+\todo{Plain todonotes.} schuld. Der Text gibt lediglich den Grauwert der Schrift an. Ist das wirklich so? Ist es
+gleichgültig, ob ich schreibe: Dies ist ein Blindtext? oder Huardest gefburn? Kjift?
+mitnichten! Ein Blindtext bietet mir wichtige Informationen. An ihm messe ich die Les-
+barkeit einer Schrift, ihre Anmutung, \todo{Plain todonotes.}wie harmonisch die Figuren zueinander stehen
+und prüfe, wie breit oder schmal sie läuft. Ein Blindtext sollte möglichst viele verschie-
+dene Buchstaben enthalten und in der Originalsprache gesetzt sein. Er muss keinen
+Sinn ergeben, sollte aber lesbar sein.\todo[nolist]{Todonote that is only shown in the margin and not in
+the list of todos.}%
+Fremdsprachige Texte wie Lorem ipsum dienen
+nicht dem eigentlichen Zweck, da sie eine falsche Anmutung vermitteln. Dies hier ist
+ein Blindtext zum Testen von Textausgaben. Wer diesen Text liest, ist selbst schuld. 
+
+\todo[inline]{A very long todonote that certainly will fill more
+than a single line in the list of todos. Just to make sure let's add
+some more text \ldots}
+
+Der Text gibt lediglich den Grauwert der Schrift an. Ist das wirklich so? Ist es gleichgültig,
+ob ich schreibe: Dies ist ein Blindtext? oder Huardest gefburn? Kjift? mitnichten!
+\todo[noline]{A note with no line back to the text.}
+Ein Blindtext bietet mir wichtige Informationen. An ihm messe ich die Lesbarkeit einer
+Schrift, ihre Anmutung, wie harmonisch die Figuren zueinander stehen und prüfe, wie
+\todo[caption={A short entry in the list of todos}]{A very long
+todonote that certainly will fill more than a single line in the
+list of todos \ldots}
+breit oder schmal sie läuft. Ein Blindtext sollte möglichst viele verschiedene Buchstaben
+enthalten und in der Originalsprache gesetzt sein. Er muss keinen Sinn ergeben, sollte
+aber lesbar sein. Fremdsprachige Texte wie Lorem ipsum dienen nicht dem eigentlichen Zweck, 
+da sie eine falsche Anmutung vermitteln.
+\missingfigure{A figure I have to make \ldots}
+
+%Nummerierte ToDo-Notes
+\todox{Erste Nummer...}
+\todox{Zweite Nummer...}
+
+%Alles To-Dos als Liste ausgegeben
+Nachfolgend wird noch eine Liste aller To-Dos auf einer separaten 
+Seite ausgegeben.
+%\begingroup
+	%\let\clearpage\relax
+	%\let\cleardoublepage\relax
+	\listoftodos
+%\endgroup 

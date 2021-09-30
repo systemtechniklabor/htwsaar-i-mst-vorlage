@@ -1,0 +1,76 @@
+\section{Mathematische Ausdrücke}
+Mathematische Ausdrücke sind eine kleine Kunst für sich. Am allereinfachsten kann man eine Formel, wie \(a + b = c\) in den Fließtext einbinden, wobei LaTeX die Höhe der Ausdrücke der Zeile anpasst,
+wie hier zu sehen \(\sum_{y=0}^{x} a\) . In einer Umgebung sieht das schon anders aus:
+\begin{equation}
+  \sum_{y=0}^{x} a
+\end{equation}
+
+Griechische Buchstaben:
+\begin{equation}
+	\alpha\beta\gamma\delta\epsilon\varepsilon\zeta\eta
+	\theta\iota\kappa\lambda\mu\nu\xi\pi\varpi\rho\varrho
+	\sigma\tau\upsilon\phi\varphi\chi\psi\omega
+\end{equation}
+
+Brüche:
+\begin{equation}
+	Ergebnis = \frac{a}{b}
+\end{equation}
+
+\begin{equation}
+	\frac{\sin{\alpha}^2 + \cos{\alpha}^2}{1} = 1
+\end{equation}
+
+\begin{equation}
+	\frac{-9x}{\frac{2y}{3z+2}}
+\end{equation}
+
+Text innerhalb von Formeln:
+\begin{equation}
+\sum_{y=1}^{n} y = \frac{n*(n+1)}{2}
+\quad
+\text{Gaußsche Summenformel}
+\end{equation}
+
+Hoch- bzw. Tiefstellungen:
+\begin{equation}
+	x_{i,j}^2
+\end{equation}
+
+\begin{equation}
+	{x_{i,j}}^2
+\end{equation}
+
+\begin{equation}
+	x_{n_0}
+\end{equation}
+
+
+Matrizen:
+Matrizen werden innerhalb der mathematischen Umgebung als wiederum neue Umgebung eingebunden. Wie bei Tabellen auch werden Zeilen durch \lstinline{\\} und Spalten durch \lstinline{&} getrennt.
+
+\begin{equation}
+	\begin{pmatrix} 
+		a&b\\
+		c&d 
+	\end{pmatrix}
+\end{equation} 
+
+\begin{equation}
+	\begin{vmatrix} 
+		a&b\\
+		c&d 
+	\end{vmatrix}
+\end{equation} 
+
+Fallunterscheidung:
+\begin{equation}
+	f(x) = 
+	\begin{cases}
+		0, &\text{falls } x < 0 \\
+		1, &\text{falls } x \geq 0
+	\end{cases}
+\end{equation}
+
+
+

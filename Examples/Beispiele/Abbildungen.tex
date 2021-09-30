@@ -1,0 +1,76 @@
+\section{Abbildungen}
+%=============================
+
+\textit{LaTeX} unterstützt generell die Formate \textit{*.jpeg}, \textit{*.png} und \textit{*.pdf}.
+Handelt es sich z.B. um Strichgrafiken oder skalierbare Farbflächen, sollte \textit{*.pdf} die erste Wahl sein,
+da sich in diesem Format Vektorgrafiken ohne Qualitätsverlust darstellen bzw. skalieren lassen.
+
+\begin{figure}[bth] 
+  \centering
+  \includegraphics[width=0.7\textwidth]{Examples/example_5.png}
+  \caption{Erstes Bild, Völklinger Hütte}
+  \label{fig:Huette}
+\end{figure}
+
+
+\subsection{Wrapfigure}
+Abbildung~\ref{fig:Huette} ist zwar ganz nett anzusehen, aber vielleicht sähe es eleganter aus, wenn die Abbildung 
+von unserem Textabschnitt umflossen werden würde. Diese Art von Abbildungen sollte jedoch sparsam und mit großer Sorgfalt eingesetzt werden, da es zu unschönen Darstellungen kommen kann.
+\blindtext
+\begin{wrapfigure}{l}{0.4\textwidth}
+  \centering
+  \includegraphics[width=0.4\textwidth]{Examples/example_5.jpg}
+  \caption{Völklinger Hütte, *.jpg}
+  \label{fig:Huette2}
+\end{wrapfigure}
+\blindtext
+
+
+\subsection{Subfigures}
+Es ist ebenso möglich, mehrere Abbildungen nebeneinander zu setzen, wie in Abbildung~\ref{fig:Beide} zu sehen ist. Eine separate Referenzierung ist auch möglich: Abbildung~\ref{subfig:abbone}.
+\begin{figure}[bth]
+  \subfloat[Erstes ...]{\includegraphics[width=0.49\textwidth]{Examples/example_5.png}\label{subfig:abbone}}\hfill
+  \subfloat[... und zweites Bild]{\includegraphics[width=0.49\textwidth]{Examples/example_5.png}\label{subfig:abbtwo}}
+  \caption{Mehrere Abbildungen nebeneinander}
+  \label{fig:Beide}
+\end{figure}
+
+
+\subsection{Qualitätsunterschiede}
+\begin{figure}[p]
+	\centering
+  \subfloat[\textit{PDF}-Format]{\includegraphics[width=0.65\textwidth]{Examples/bpmn.pdf}} \\
+  \subfloat[\textit{JPG}-Format]{\includegraphics[width=0.65\textwidth]{Examples/bpmn.jpg}}
+  \caption{Beide Formate im Vergleich}
+  \label{fig:pdfvsjpg}
+\end{figure}
+
+\begin{figure}[p]
+	\centering
+  \includegraphics[width=0.65\textwidth]{Examples/jabref.png}
+   \caption{\textit{PNG}-Format}
+  \label{fig:pngvsjpg1}
+\end{figure}
+
+\begin{figure}[p]
+	\centering
+  \includegraphics[width=0.65\textwidth]{Examples/jabref.jpg}
+   \caption{\textit{JPG}-Format}
+  \label{fig:pngvsjpg2}
+\end{figure}
+
+Leider haben die unterschiedlichen Grafikformate bedingt durch die unterschiedlichen Kompressionsverfahren einige Schwächen, insbesondere die Umwandlung in das \textit{JPG}-Format erzeugt unangenehme Artefakte im Bild. \autoref{fig:pdfvsjpg} zeigt die Unterschiede zwischen \textit{PDF-Format} und \textit{JPG-Format} im Vergleich. 
+
+Wenn eine \textit{*.pdf}-Datei nicht infrage kommt, beispielsweise bei Screenshots, ist unbedingt das \textit{PNG-Format} vorzuziehen. 
+Den Unterschied machen \autoref{fig:pngvsjpg1} und \autoref{fig:pngvsjpg2} deutlich.
+
+\glqq Faustregeln\grqq im Umgang mit Abbildungen:
+\begin{itemize}
+	\item Diagramme bzw. alles, was Linien usw. enthält: \textit{PDF} (im Vektorformat).
+	\item Screenshots bzw. alles, was größere gleichfarbige Flächen enthält: \textit{PNG}.
+	\item Der Rest (in der Regel Fotos): \textit{JPEG}.
+\end{itemize}
+
+
+
+

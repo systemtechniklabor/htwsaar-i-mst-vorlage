@@ -1,0 +1,105 @@
+%************************
+%*		Tabellen 		*
+%************************
+
+\section{Tabellen}
+\label{sec:Tabellen}
+
+\subsection{Einfache Tabelle}
+In LaTeX lassen sich Tabellen unterschiedlicher Ausprägung einfach erzeugen. Das allgemeine Format einer Tabelle sieht aus wie folgt:
+
+\begin{lstlisting}[caption={Allgemeines Format}]
+\begin{table}
+	\caption{BESCHRIFTUNG}
+	\begin{tabular}{FORMATIERUNG}
+		TABELLENINHALT
+	\end{tabular}
+\end{table}
+\end{lstlisting}
+
+Eine Beispieltabelle (Tabelle \ref{tab:beispieltabelle1}) könnte also so aussehen:
+
+\begin{lstlisting}[caption={Tabelle \ref{tab:beispieltabelle1}}]
+\begin{table}
+	\caption{Beispiel 1}
+	\begin{tabular}{lrcr}
+		\toprule
+		\textbf{Name} & \textbf{Vorname} & \textbf{Matrikelnummer} & \textbf{Lieblingsspeise}\\
+		\midrule
+		Jackson & Michael & 123456 & Erdbeereis \\
+		Springsteen & Bruce & 234567 & Schwedisches Lakritz \\
+		Bach & Anna, Magdalena & 3456789 & Frankfurter Kranz \\
+		Schumann & Clara & 4567890 & Bisquitt\"ortchen \\
+		\bottomrule
+	\end{tabular}
+	\label{tab:beispieltabelle1}
+\end{table}
+\end{lstlisting}
+
+Mit \lstinline|\caption{Beispiel 1}| bekommt unsere Tabelle eine Beschriftung am Tabellenkopf. \lstinline{l|r|c|r} legt die Textausrichtung der einzelnen Spalten fest: \lstinline|l| bedeutet linksausgerichtet, \lstinline|r| rechtsausgerichtet und \lstinline|c| zentriert. Durch \lstinline{|} werden Spaltenlinien gezogen. \lstinline|\toprule|, \lstinline|\midrule| und \lstinline|\bottomrule| erzeugen Kopf-, Mittel- und Abschlusslinie in der Tabelle. Als Spaltentrenner wird das \lstinline{&} genutzt, Zeilentrenner ist der doppelte Backslash (\lstinline|\\|). Am Ende kann die Tabelle auch mit einem Label versehen werden (\lstinline|\label{tab:beispieltabelle1}|), über welches diese referenziert wird.
+
+%\begin{center}
+\begin{table}[b]
+	
+	\caption{Beispiel 1}
+	\begin{tabular}{lrcr}
+		\toprule
+		\textbf{Name} & \textbf{Vorname} & \textbf{Matrikelnummer} & \textbf{Lieblingsspeise}\\
+		\midrule
+		Jackson & Michael & 123456 & Erdbeereis \\
+		Springsteen & Bruce & 234567 & Schwedisches Lakritz \\
+		Bach & Anna, Magdalena & 3456789 & Frankfurter Kranz \\
+		Schumann & Clara & 4567890 & Bisquittörtchen \\
+		\bottomrule
+	\end{tabular}
+	\label{tab:beispieltabelle1}
+\end{table}
+%\end{center}
+
+\subsection{Erweiterte Tabellenbefehle}
+Um Tabellen in LaTeX flexibler zu gestalten gibt es weitere Befehle bzw. zusätzliche Pakete, die einem das Leben leichter machen (Tabelle \ref{tab:beispieltabelle2}). Hierzu ein weiteres Beispiel:
+
+\begin{lstlisting}[caption={Tabelle \ref{tab:beispieltabelle2}}]
+\begin{table}
+	\centering
+	\caption{Beispiel 2}
+	\begin{tabular}{lll}
+		\hline
+		Author & Title & Year \\
+		\hline
+		\hline
+		\multirow{3}{*}{Stanislav Lem} & Solaris & 1961 \\
+ 			& Roboterm\"archen & 1967 \\
+ 			& Der futurologische Kongress & 1971 \\
+		\hline
+		\multirow{3}{*}{Isaac Asimov} & Ich, der Robot & 1952 \\
+ 			& Der Tausendjahresplan & 1966 \\
+ 			& Doctor Schapirows Gehirn & 1988 \\
+		\hline
+	\end{tabular}
+\label{tab:beispieltabelle2}
+\end{table}
+\end{lstlisting}
+
+Mit \lstinline|\centering| wird die Tabelle zentriert ausgerichtet, analoge Befehle für rechts- bzw. linksausrichtung sind z.B. \lstinline|\raggedleft| und \lstinline|\raggedright|. \\
+
+Eine weitere Form der Tabellen ist das Package \textit{tabularx}, das variable Spaltenbreiten unterstützt, und \textit{booktabs}, welches mit horizontalen Linien besser arbeiten kann.
+\begin{table}
+	\centering
+	\caption{So sollte man es nicht machen! Beispiel für einen schlechten Tabellenstil}
+	\begin{tabular}{|l|l|l|}
+		\hline
+		Author & Title & Year \\
+		\hline
+		\hline
+		\multirow{3}{*}{Stanislav Lem} & Solaris & 1961 \\
+ 			& Robotermärchen & 1967 \\
+ 			& Der futurologische Kongress & 1971 \\
+		\hline
+		\multirow{3}{*}{Isaac Asimov} & Ich, der Robot & 1952 \\
+ 			& Der Tausendjahresplan & 1966 \\
+ 			& Doctor Schapirows Gehirn & 1988 \\
+		\hline
+	\end{tabular}
+\label{tab:beispieltabelle2}
+\end{table}

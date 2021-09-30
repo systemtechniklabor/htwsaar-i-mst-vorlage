@@ -1,0 +1,25 @@
+%*******************************
+% 			Listings 		   *
+%*******************************
+
+\section{Quellcode einbinden}
+Das Package \textit{lstlisting} ermöglicht es, Quellcode ansprechend in das Dokument einzubinden. Man kann Quellcode einzeilig einbinden 
+mittels \lstinline{\lstinline|Quellcode|}. Dabei ist darauf zu achten, dass der Befehl einmal mit \{ \} und einmal mit | | aufgerufen werden kann, je nachdem, 
+welche Zeichen im angegebenen Quelltext genutzt werden. 
+Es ist auch möglich eine eigene Umgebung für Quelltext zu schaffen:
+
+\begin{lstlisting}[caption=Erstes Listing,style=Java]
+private Umgebung(int i, int k)
+{
+	System.out.println("Eine Funktion mit " + i + "und" + k ".");
+}
+\end{lstlisting}  
+
+Wer Quelltext aus externen Dateien einbinden möchte, geht wie folgt vor:
+
+\lstinputlisting
+[caption={Externer Quellcode},style=Java]
+{Examples/Code.java}
+
+Wie genau der Quellcode formatiert und gefärbt ist, ist in \textit{htwsaar.i.mst.config.tex} hinterlegt, wobei fü verschiedene Sprachen auch eigene Styles angelegt werden
+können (hier z.B. für Java).
