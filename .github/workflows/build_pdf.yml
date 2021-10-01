@@ -14,4 +14,4 @@ jobs:
       - name: Compile LaTeX document
         uses: dante-ev/latex-action@latest
         with:
-          root_file: htwsaar-i-mst-vorlage.tex
+          root_file: htwsaar-i-mst-config.tex
