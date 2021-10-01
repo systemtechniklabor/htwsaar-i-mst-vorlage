@@ -1,0 +1,17 @@
+# latex-action von Deutschsprachige Anwendervereinigung TeX e.V.
+# https://github.com/dante-ev/latex-action
+name: Build LaTeX document
+on:  
+  push:
+  schedule:
+    - cron: '0 0 2 * *'
+jobs:
+  build_latex:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Set up Git repository
+        uses: actions/checkout@v2
+      - name: Compile LaTeX document
+        uses: dante-ev/latex-action@latest
+        with:
+          root_file: htwsaar-i-mst-config.tex
