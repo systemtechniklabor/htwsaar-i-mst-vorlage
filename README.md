@@ -1,6 +1,4 @@
-# htwsaar-i-mst-vorlage
-
-![Version](https://img.shields.io/badge/version-2.2-blue)  ![Language](https://img.shields.io/badge/language-LaTeX-lightgrey)
+# htwsaar-i-mst-vorlage [![Build LaTeX document](https://github.com/systemtechniklabor/htwsaar-i-mst-vorlage/actions/workflows/build_pdf.yml/badge.svg)](https://github.com/systemtechniklabor/htwsaar-i-mst-vorlage/actions/workflows/build_pdf.yml)
 
 Eine LaTeX-Vorlage für Abschlussarbeiten im Bereich Informatik/Mechatronik-Sensortechnik an der htw saar.
 
