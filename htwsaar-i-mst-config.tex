@@ -41,9 +41,10 @@
  \RequirePackage{babel}					
  \RequirePackage{csquotes}
 	
-\PassOptionsToPackage{language=auto,style=numeric-comp,backend=bibtex8,bibencoding=ascii,maxbibnames=50}{biblatex}
+\PassOptionsToPackage{language=auto,style=numeric-comp,backend=bibtex8,bibencoding=ascii,maxbibnames=50}{biblatex} % backend ggf. auf neueres Werkzeug (z.B. biber) anpassen
  \RequirePackage{biblatex}	
- \bibliography{Bibliography}			
+ %\bibliography{Bibliography}	% alter Befehl
+ \addbibresource{Bibliography}
 
 \PassOptionsToPackage{fleqn}{amsmath}		% math environments and more by the AMS 
  \RequirePackage{amsmath}
