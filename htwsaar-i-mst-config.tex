@@ -8,13 +8,15 @@
 % ****************************************************************************************************
 % 1. Personal data and user ad-hoc commands
 % ****************************************************************************************************
-\newcommand{\myTitle}{Eine \LaTeX-Vorlage für Abschlussarbeiten im Bereich Informatik/Mechatronik-Sensortechnik an der htw saar}
+\newcommand{\myTitle}{Eine \LaTeX-Vorlage für Abschlussarbeiten im Bereich Informatik/Mechatronik-Sensortechnik (inkl. DFHI) an der htw saar}
 \newcommand{\myDegree}{Bachelor of Science (B.\,Sc.)\xspace}
 %\newcommand{\myDegree}{Master of Science (M.\,Sc.)\xspace}
 \newcommand{\myDegreeType}{Bachelor\xspace}
 %\newcommand{\myDegreeType}{Master\xspace}
 \newcommand{\myDegreeCourse}{Praktische Informatik}
+%\newcommand{\myDegreeCourse}{Informatik und Web-Engineering}
 %\newcommand{\myDegreeCourse}{Kommunikationsinformatik}
+%\newcommand{\myDegreeCourse}{Produktionsinformatik}
 \newcommand{\myName}{Max Muster\xspace}
 \newcommand{\myUni}{Hochschule für Technik und Wirtschaft des Saarlandes\xspace}
 \newcommand{\myCompany}{SoftwareCenter Musterhausen\xspace}
@@ -22,7 +24,7 @@
 \newcommand{\mySecondProf}{Prof. Dr. Thomas Kretschmer\xspace}
 \newcommand{\myLocation}{Saarbrücken\xspace}
 \newcommand{\myTime}{Tag.~Monat~Jahr\xspace}
-\newcommand{\currentVersion}{Version 2.23, März 2022\xspace} % TODO: ggf. über git Versionsinformationen automatisch bereitstellen und verwenden
+\newcommand{\currentVersion}{Version 2.25, August 2024\xspace} % TODO: ggf. über git Versionsinformationen automatisch bereitstellen und verwenden
 
 % ********************************************************************
 % Setup, finetuning, and useful commands
@@ -142,6 +144,7 @@ belowcaptionskip=1\baselineskip,
 % ********************************************************************
 % Using PDFLaTeX
 % ********************************************************************
+\usepackage{xurl}  % better handling of long URLs / hyphenation
 \PassOptionsToPackage{pdftex,hyperfootnotes=false,pdfpagelabels}{hyperref}
 	\usepackage{hyperref}  % backref linktocpage pagebackref
 \pdfcompresslevel=9
@@ -156,9 +159,9 @@ belowcaptionskip=1\baselineskip,
 \hypersetup{%
     %draft,	% = no hyperlinking at all (useful in b/w printouts)
     pdfstartpage=1, pdfstartview=Fit,%
-		colorlinks=true, linktocpage=true,
-		%urlcolor=Black, linkcolor=Black, citecolor=Black, %pagecolor=Black,%
-		%urlcolor=brown, linkcolor=RoyalBlue, citecolor=green, %pagecolor=RoyalBlue,%
+	colorlinks=true, linktocpage=true,
+	%urlcolor=Black, linkcolor=Black, citecolor=Black, %pagecolor=Black,%
+	%urlcolor=brown, linkcolor=RoyalBlue, citecolor=green, %pagecolor=RoyalBlue,%
     % uncomment the following line if you want to have black links (e.g., for printing)
     colorlinks=false, pdfborder={0 0 0},
     breaklinks=true, pdfpagemode=UseNone, pageanchor=true, pdfpagemode=UseOutlines,%
